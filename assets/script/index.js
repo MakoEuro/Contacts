@@ -19,6 +19,8 @@ function sleep(duration) {
 const input = select('.input');
 const submit = select('.submit');
 
+const error = select('.error');
+
 const containContact = select('.wrapper');
 
 const counter = select('.counter');
@@ -79,6 +81,9 @@ class Contact {
             let emailP = document.createElement('p');
             emailP.innerText = `Email: Invalid`;
             element.appendChild(emailP);
+
+            error.style.visibility = 'initial';
+            error.innerHTML = 'Please enter a valid email on contacts'
         }
         
         // Removal of contact on click
@@ -86,6 +91,8 @@ class Contact {
             if(element.matches('div')) {    
                 element.remove();
 
+                error.style.visibility = 'initial';
+                error.innerHTML = 'Contact removed';
                 // Removes 1 point upon deletion
                 countContact--;
 
@@ -120,6 +127,8 @@ onEvent('click', submit, function() {
         counter.innerText = `Number of contacts: ${countContact}`;
     // If not then it will display an error and not continue the code
     } else if (arr.length !== 2){
+        error.style.visibility = 'initial';
+        error.innerHTML = 'Please input info in the format of: Name, City, example@mail.com';
         console.log('Greater/less than 3 values');
     }
 });
