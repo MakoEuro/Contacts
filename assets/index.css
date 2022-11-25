@@ -81,6 +81,7 @@ button {
 .wrapper * {
     margin-top: 10px;
     display: grid;
+    order: -1;
 }
 
 /* - - - - - - - - - - - - - - - - - - -
@@ -92,10 +93,31 @@ button {
     width: 360px;
     height: 130px;
     background-color: #27272f;
+    border: 1px solid #0000;
     border-radius: 5px;
     color: var(--app-font-color);
+
+    /* Transition for deleting */
+    transition: all 0.3s;
+    animation: 0.5s ease-out 0s 1 loadIn;
 }
 
 .contact p {
     font-size: 14px;
+}
+
+/* Indication for deleting */
+.contact:hover {
+    border: 1px solid rgb(157, 0, 0);
+}
+
+@keyframes loadIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+    }    
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
 }
