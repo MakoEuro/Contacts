@@ -25,3 +25,47 @@ body {
     width: min(100% - 30px, 1280px);
     margin-inline: auto;
 }
+
+/* - - - - - - - - - - - - - - - - - - -
+            MAIN & FORM
+- - - - - - - - - - - - - - - - - - - - */
+
+main {
+    padding: 0 20%;
+    color: var(--app-font-color);
+    
+}
+
+form {
+    margin-top: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-weight: 300;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 400px;
+    background-color: #27272f;
+    border-radius: 5px;
+    color: var(--app-font-color);
+}
+
+input[type="text"]::placeholder{
+    color: var(#3f3f4a);
+}
+
+button {
+    padding: 10px;
+    width: 100px;
+    color: var(--app-font-color);
+    background-color: #0d8537;
+    border-radius: 5px;
+}
+
+
+
