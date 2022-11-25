@@ -20,20 +20,55 @@ function sleep(duration) {
 const input = select('.input');
 const submit = select('.submit');
 
+const containContact = select('.wrapper');
 // Class
 
 class Contact {
+    #name;
+    #city;
+    #email;
+
     constructor(name, city, email) {
-        this.name = name;
-        this.city = city;
-        this.email = email;
+        this.#name = name;
+        this.#city = city;
+        this.#email = email;
+    }
 
-        this.element = document.createElement('div');
-        document.querySelector('.container').appendChild(this.element);
+    get name() {
+        return this.#name;
+    }
 
-        this.element.style.width = "200px";
-        this.element.style.height = "150px";
-        this.element.style.backgroundColor = "#27272f";
+    get city() {
+        return this.#city;
+    }
+
+    get email() {
+        return this.#email;
+    }
+
+    listContacts() {
+        let element = document.createElement('div');
+        
+        containContact.prepend(element);
+        element.classList.add('contact');
+        
+        let nameP = document.createElement('p');
+        nameP.innerText = `Name: ${this.#name}`;
+        element.appendChild(nameP);
+
+        let cityP = document.createElement('p');
+        cityP.innerText = `City: ${this.#city}`;
+        element.appendChild(cityP);
+        
+        let emailP = document.createElement('p');
+        emailP.innerText = `Email: ${this.#email}`;
+        element.appendChild(emailP);
+
+        element.addEventListener('click', function() {
+            if(element.matches('div')) {
+                element.remove();
+            }
+        })
     }
 
 
@@ -45,9 +80,8 @@ onEvent('click', submit, function() {
     console.log(arr);
     if (arr.length === 3) {
         const contactBox = new Contact(arr);
+        contactBox.listContacts();
     } else if (arr.length !== 2){
-        console.log('Greater/less than 3 values')
-    } else if (arr) {
-
+        console.log('Greater/less than 3 values');
     }
 });

@@ -31,9 +31,8 @@ body {
 - - - - - - - - - - - - - - - - - - - - */
 
 main {
-    padding: 0 20%;
+    padding: 0 10%;
     color: var(--app-font-color);
-    
 }
 
 form {
@@ -67,5 +66,36 @@ button {
     border-radius: 5px;
 }
 
+/* - - - - - - - - - - - - - - - - - - -
+            WRAPPER
+- - - - - - - - - - - - - - - - - - - - */
 
+.wrapper {
+    margin-top: 30px;
+    padding: 10px;
+    width: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
 
+.wrapper * {
+    margin-top: 10px;
+    display: grid;
+}
+
+/* - - - - - - - - - - - - - - - - - - -
+            CONTACT BOXES
+- - - - - - - - - - - - - - - - - - - - */
+
+.contact {
+    padding: 10px;
+    width: 360px;
+    height: 130px;
+    background-color: #27272f;
+    border-radius: 5px;
+    color: var(--app-font-color);
+}
+
+.contact p {
+    font-size: 14px;
+}
