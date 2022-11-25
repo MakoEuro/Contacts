@@ -21,6 +21,11 @@ const submit = select('.submit');
 
 const containContact = select('.wrapper');
 
+const counter = select('.counter');
+
+// Counter for number of contacts added
+let countContact = 0;
+
 // Class
 class Contact {
     #name;
@@ -80,6 +85,15 @@ class Contact {
         element.addEventListener('click', function() {
             if(element.matches('div')) {    
                 element.remove();
+
+                // Removes 1 point upon deletion
+                countContact--;
+
+                counter.innerText = `Number of contacts: ${countContact}`;
+
+                if(countContact === 0) {
+                    counter.innerText = '';
+                }
             }
         })
     }
@@ -101,7 +115,9 @@ onEvent('click', submit, function() {
     if (arr.length === 3) {
         const contactBox = new Contact(name, city, email);
         contactBox.listContacts();
+        countContact++;
 
+        counter.innerText = `Number of contacts: ${countContact}`;
     // If not then it will display an error and not continue the code
     } else if (arr.length !== 2){
         console.log('Greater/less than 3 values');

@@ -31,17 +31,18 @@ body {
 - - - - - - - - - - - - - - - - - - - - */
 
 main {
-    padding: 0 10%;
     color: var(--app-font-color);
+    padding: 0 100px;
 }
 
 form {
-    margin-top: 50px;
-    align-items: center;
-    justify-content: center;
+    margin: 50px 0 0;
+    display: inline-block;
+    transform: translateX(80%);
 }
 
 h1 {
+    margin-bottom: 10px;
     text-align: center;
     font-weight: 300;
 }
@@ -90,7 +91,7 @@ button {
 
 .contact {
     padding: 10px;
-    width: 360px;
+    width: 400px;
     height: 130px;
     background-color: #27272f;
     border: 1px solid #0000;
@@ -110,6 +111,19 @@ button {
 .contact:hover {
     border: 1px solid rgb(157, 0, 0);
 }
+
+/* - - - - - - - - - - - - - - - - - - -
+            COUNTER
+- - - - - - - - - - - - - - - - - - - - */
+
+.counter {
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* - - - - - - - - - - - - - - - - - - -
+            ANIMATION
+- - - - - - - - - - - - - - - - - - - - */
 
 @keyframes loadIn {
     0% {
